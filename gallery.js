@@ -1,4 +1,4 @@
-window.onload = populateChico;
+window.onload = shuffleGallery;
 var chico = [];
 var current;
 
@@ -33,6 +33,9 @@ chico[3] = new chicoLocation("Sierra Nevada Brewery", "http://www.visitcaliforni
 chico[4] = new chicoLocation("20th Street Park", "http://www.chicorealestate.net/area_photos/park/community_park-xl7302_19_3_51.jpg", "chicorealestate.net");
 */
 function shuffleGallery() {
+  if (chico[0] == undefined) {
+    populateChico();
+  }
   do {
     var randIndex = generateRandomIndex();
   } while (chico[randIndex] == current)
